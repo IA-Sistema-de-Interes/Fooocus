@@ -441,9 +441,9 @@ def patched_unet_forward(self, x, timesteps=None, context=None, y=None, control=
     h = apply_control(h, control, 'middle')
 
     for id, module in enumerate(self.output_blocks):
-        transformer_options["block"] = ("output", id)
+        transformer_options["block"] = ("/content/drive/MyDrive/output", id)
         hsp = hs.pop()
-        hsp = apply_control(hsp, control, 'output')
+        hsp = apply_control(hsp, control, '/content/drive/MyDrive/output')
 
         if "output_block_patch" in transformer_patches:
             patch = transformer_patches["output_block_patch"]
